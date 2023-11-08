@@ -1,0 +1,33 @@
+header {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  margin-top: 100px;
+  padding-bottom: 20px;
+  position: relative;
+  background-color: #f5eefd;
+  background-image: url("https://www.transparenttextures.com/patterns/subtle-zebra-3d.png");
+  background-attachment: fixed;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+h2 {
+  font-family: 'source-sans-3', sans-serif;
+  font-weight: 300;
+  margin: 5px;
+  color: #8071f4;
+}
+
+.profile-photo {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.profile-info {
+  display: flex;
+  flex: .5;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
