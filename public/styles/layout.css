@@ -6,7 +6,10 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -15,11 +18,29 @@ html {
  */
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  color: #79746d;
+  background-color: #ffffff;
   font-size: 24px;
+  font-family: 'source-sans-3', sans-serif;
+  font-weight: 300;
+  width: 100vw;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+.account-tag {
+  font-family: 'source-sans-3', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #8071f4;
+}
+
+b {
+  font-weight: 600;
+}
+
+p {
+  margin: 5px;
+}
