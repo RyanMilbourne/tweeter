@@ -1,0 +1,29 @@
+nav {
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  background-color: #8071f4;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  font-family: 'bungee', sans-serif;
+  align-content: center;
+  align-items: center;
+  margin: 1.5em;
+}
+
+.nav-action {
+  margin: 1.5em;
+  display: flex;
+  font-size: 1.1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
