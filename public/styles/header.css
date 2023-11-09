@@ -4,7 +4,6 @@ header {
   display: flex;
   margin-top: 100px;
   padding-bottom: 20px;
-  position: relative;
   background-color: #f5eefd;
   background-image: url("https://www.transparenttextures.com/patterns/subtle-zebra-3d.png");
   background-attachment: fixed;
@@ -26,4 +25,11 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+}
+
+.account-tag {
+  font-family: 'source-sans-3', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #8071f4;
 }

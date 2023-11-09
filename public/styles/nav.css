@@ -1,6 +1,6 @@
 nav {
   height: 100px;
-  width: 100%;
+  width: 100vw;
   position: fixed;
   top: 0px;
   background-color: #8071f4;
@@ -26,4 +26,8 @@ nav {
   justify-content: center;
   align-content: center;
   align-items: center;
+}
+
+.fa-solid.fa-solid.fa-angles-down {
+  color: white;
 }
