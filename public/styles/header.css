@@ -19,6 +19,12 @@ h2 {
   color: #8071f4;
 }
 
+.profile-photo:hover {
+  scale: 101%;
+  transition: cubic-bezier(0, 1.18, 0, 1.23);
+  transition-duration: 500ms;
+}
+
 .profile-info {
   display: flex;
   flex: .5;
