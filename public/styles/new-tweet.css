@@ -69,3 +69,7 @@ textarea:focus {
   align-items: center;
   justify-content: center;
 }
+
+.exceeded-character-limit {
+  color: red;
+}
