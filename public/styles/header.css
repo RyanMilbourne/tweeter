@@ -1,4 +1,4 @@
-header {
+header.profile-banner {
   height: 400px;
   width: 100%;
   display: flex;
@@ -10,13 +10,6 @@ header {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-}
-
-h2 {
-  font-family: 'source-sans-3', sans-serif;
-  font-weight: 300;
-  margin: 5px;
-  color: #8071f4;
 }
 
 .profile-photo:hover {
