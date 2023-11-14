@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
@@ -26,8 +27,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
-  <script src="./scripts/composer-char-counter.js"></script>
+  <script type="text/javascript" src="./scripts/client.js"></script>
+  <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
 
 </head>
 
@@ -62,7 +63,7 @@
       <h2>Compose a Tweet</h2>
       <form method="POST" action="/tweets" class="create-tweet">
         <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" class="tweet-text"></textarea>
+        <textarea name="text" id="tweet-text" class="tweet-text"></textarea>
         <div class="new-tweet-footer">
           <button type="submit" class="submit-button">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
@@ -71,37 +72,7 @@
     </section>
 
     <!-- display all tweets -->
-    <section class="tweets">
-      <article class="tweet">
-        <header>
-          <div class="user-wrapper">
-            <img src="./images/profile-hex.png" class="tweet-profile-photo" alt="My Profile Picture">
-            Newton
-          </div>
-          <div class="user-id">
-            @sirIsaac
-          </div>
-        </header>
-        <div class="user-tweet">
-          If I have seen further, it is by standing on the shoulders of giants
-        </div>
-        <footer>
-          <div class="date-stamp">
-            10 days ago
-          </div>
-          <div class="tweet-options">
-            <div class="tweet-toggle">
-              <i class="fa-solid fa-flag"></i>
-            </div>
-            <div class="tweet-toggle">
-              <i class="fa-solid fa-retweet"></i>
-            </div>
-            <div class="tweet-toggle">
-              <i class="fa-solid fa-heart"></i>
-            </div>
-          </div>
-        </footer>
-      </article>
+    <section id="tweets-container">
     </section>
   </main>
 
