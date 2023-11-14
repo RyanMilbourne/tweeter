@@ -133,24 +133,26 @@ article.tweet header {
   align-items: center;
 }
 
-.user-id {
+.handle {
   display: flex;
   align-items: center;
   color: rgba(128, 113, 244, .5);
   padding-right: 1rem;
 }
 
-.user-id:hover {
+.handle:hover {
   color: #8071f4;
 }
 
-.tweet-profile-photo {
+.avatar {
+  padding: 5px;
   height: 50px;
   margin-right: .1rem;
+  border-radius: 25%;
   /* mix-blend-mode: multiply; */
 }
 
-.tweets {
+#tweets-container {
   width: 100%;
   display: flex;
   flex-direction: column;
