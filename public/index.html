@@ -58,82 +58,50 @@
 
   <!-- create new tweet -->
   <main>
-    <section id="new-tweet">
+    <section class="new-tweet">
       <h2>Compose a Tweet</h2>
       <form method="POST" action="/tweets" class="create-tweet">
         <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
+        <textarea name="text" class="tweet-text"></textarea>
         <div class="new-tweet-footer">
-          <button type="submit" id="submit-button">Tweet</button>
+          <button type="submit" class="submit-button">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
     </section>
 
     <!-- display all tweets -->
-    <section id="tweets">
+    <section class="tweets">
       <article class="tweet">
         <header>
-          <div id="user">
-            <img src="./images/profile-hex.png" class="tweet-profile-photo">
+          <div class="user-wrapper">
+            <img src="./images/profile-hex.png" class="tweet-profile-photo" alt="My Profile Picture">
             Newton
           </div>
-          <div id="user-id">
+          <div class="user-id">
             @sirIsaac
           </div>
         </header>
-        <div id="user-tweet">
+        <div class="user-tweet">
           If I have seen further, it is by standing on the shoulders of giants
         </div>
         <footer>
-          <div id="date-stamp">
+          <div class="date-stamp">
             10 days ago
           </div>
           <div class="tweet-options">
-            <div id="tweet-toggle">
+            <div class="tweet-toggle">
               <i class="fa-solid fa-flag"></i>
             </div>
-            <div id="tweet-toggle">
+            <div class="tweet-toggle">
               <i class="fa-solid fa-retweet"></i>
             </div>
-            <div id="tweet-toggle">
+            <div class="tweet-toggle">
               <i class="fa-solid fa-heart"></i>
             </div>
           </div>
         </footer>
       </article>
-
-      <article class="tweet">
-        <header>
-          <div id="user">
-            <img src="./images/profile-hex.png" class="tweet-profile-photo">
-            Newton
-          </div>
-          <div id="user-id">
-            @sirIsaac
-          </div>
-        </header>
-        <div id="user-tweet">
-          I can now time-travel. #sup
-        </div>
-        <footer>
-          <div id="date-stamp">
-            11 days ago
-          </div>
-          <div class="tweet-options">
-            <div id="tweet-toggle">
-              <i class="fa-solid fa-flag"></i>
-            </div>
-            <div id="tweet-toggle">
-              <i class="fa-solid fa-retweet"></i>
-            </div>
-            <div id="tweet-toggle">
-              <i class="fa-solid fa-heart"></i>
-            </div>
-          </div>
-        </footer>
-      </article>
-
     </section>
   </main>
 
