@@ -89,12 +89,12 @@ $(document).ready(function() {
     $alert.html('');
 
     if (message.length > 140) {
-      const $alertMessage = $('<p>Too many characters!</p>');
+      const $alertMessage = $('<p><i>*Character limit exceeded</i></p>');
       return $($alert).append($alertMessage);
     }
 
     if (message === null || message === "") {
-      const $message = $('<p>Please enter some text before submission!</p>')
+      const $message = $('<p><i>*Please enter some text before submmitting a tweet</i></p>')
       return $($alert).append($message);
     }
 
