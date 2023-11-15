@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $('.tweet-text').on("input", function(event) {
+  $(document).on("input", '.tweet-text', function(event) {
     const inputLength = this.value.length;
     const startCount = 140;
 
