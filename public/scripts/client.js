@@ -84,13 +84,18 @@ $(document).ready(function() {
 
     const $formData = $(this).serialize();
     const message = $('#tweet-text').val();
+    const $alert = $('#alert');
+
+    $alert.html('');
 
     if (message.length > 140) {
-      return alert("Too many characters!");
+      const $alertMessage = $('<p>Too many characters!</p>');
+      return $($alert).append($alertMessage);
     }
 
     if (message === null || message === "") {
-      return alert("Please enter some text before submitting a tweet!");
+      const $message = $('<p>Please enter some text before submission!</p>')
+      return $($alert).append($message);
     }
 
     $.ajax({
