@@ -26,7 +26,7 @@ $(document).ready(function() {
 
     tweets.forEach((element) => {
       const $tweetElement = createTweetElement(element);
-      $tweetsContainer.append($tweetElement);
+      $tweetsContainer.prepend($tweetElement);
     });
 
   };
@@ -37,6 +37,12 @@ $(document).ready(function() {
     const handle = element.user.handle;
     const message = element.content.text;
     const dateStamp = timeago.format(element.created_at);
+
+    const escape = function(str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
 
     const $tweet = $(`<article class="tweet">
     <header>
@@ -49,7 +55,7 @@ $(document).ready(function() {
       </div>
     </header>
     <div class="user-tweet">
-      ${message}
+      ${escape(message)}
     </div>
     <footer>
       <div class="date-stamp">
@@ -93,6 +99,7 @@ $(document).ready(function() {
       data: $formData,
       success: function(response) {
         console.log('Server Response:', response);
+        window.location.reload();
       },
       error: function(error) {
         console.error('Error:', error);
