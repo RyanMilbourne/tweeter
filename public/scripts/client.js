@@ -17,7 +17,7 @@ $(document).ready(function() {
       error: function(error) {
         console.error("Could not load tweets: ", error);
       }
-    })
+    });
   };
 
   const renderTweets = function(tweets) {
@@ -27,9 +27,9 @@ $(document).ready(function() {
     tweets.forEach((element) => {
       const $tweetElement = createTweetElement(element);
       $tweetsContainer.append($tweetElement);
-    })
+    });
 
-  }
+  };
 
   const createTweetElement = function(element) {
     const name = element.user.name;
@@ -86,16 +86,6 @@ $(document).ready(function() {
     if (message === null || message === "") {
       return alert("Please enter some text before submitting a tweet!");
     }
-    /*
-    mentor version of post ajax request
-
-    $.ajax('/tweets', { method: 'POST', data: $formData })
-      .then(function(data, textStatus, jqXHR) {
-        console.log("data: ", data);
-        console.log("status: ", textStatus);
-        console.log("jqXHR", jqXHR);
-      });
-    */
 
     $.ajax({
       type: 'POST',
@@ -111,6 +101,6 @@ $(document).ready(function() {
 
   });
 
-  loadTweets()
+  loadTweets();
 
 });
