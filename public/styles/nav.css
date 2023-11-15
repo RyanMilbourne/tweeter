@@ -1,7 +1,7 @@
 nav {
   height: 100px;
   width: 100vw;
-  padding: 0 1.5rem 0 1.5rem;
+  padding: 0 2.5rem 0 2.5rem;
   position: fixed;
   top: 0px;
   background-color: #8071f4;
@@ -20,6 +20,11 @@ nav {
   margin: 1.5rem 0 1.5rem 0;
 }
 
+.logo:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
 .nav-action {
   margin: 1.5rem 0 1.5rem 0;
   display: flex;
@@ -30,6 +35,28 @@ nav {
   align-items: center;
 }
 
+.nav-action:hover {
+  cursor: pointer;
+  transition: ease-in-out;
+  transform: scale(1.05);
+}
+
+@keyframes loop {
+  0% {
+    transform: translateY(10%);
+  }
+
+  50% {
+    transform: translateY(-10%);
+  }
+
+  100% {
+    transform: translateY(10%);
+  }
+}
+
 .fa-solid.fa-solid.fa-angles-down {
+  margin-top: .2rem;
   color: white;
+  animation: loop 1s ease-in-out infinite;
 }
