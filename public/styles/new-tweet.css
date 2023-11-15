@@ -6,10 +6,16 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  /* padding-top: 20px; */
+  /* margin-bottom: 4rem; */
+}
+
+.new-tweet-container {
+  padding-top: 20px;
   margin-bottom: 4rem;
 }
 
-.new-tweet h2 {
+.new-tweet-container h2 {
   margin: 0;
   font-family: "bungee", sans-serif;
   font-size: 1.5rem;
@@ -76,6 +82,7 @@ textarea:focus {
 }
 
 .submit-button:hover {
+  cursor: pointer;
   box-shadow: 4px 4px 0 0 #8071f4;
   transform: translate(-4px, -4px);
   transition: cubic-bezier(0, 0, 0, 1.02);
@@ -184,6 +191,7 @@ article.tweet footer {
 }
 
 .tweet-toggle:hover {
+  cursor: pointer;
   color: #ffbb00;
 }
 
