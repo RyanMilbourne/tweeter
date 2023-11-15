@@ -140,8 +140,9 @@ $(document).ready(function() {
       data: $formData,
       success: function(response) {
         console.log('Server Response:', response);
-        window.location.reload();
-
+        loadTweets();
+        $('#tweet-text').val("").focus(); // reset textArea
+        $('.counter').val(140)// reset the counter
       },
       error: function(error) {
         console.error('Error:', error);
