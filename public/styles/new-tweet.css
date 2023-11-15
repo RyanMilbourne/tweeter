@@ -149,7 +149,6 @@ article.tweet header {
   height: 50px;
   margin-right: .1rem;
   border-radius: 25%;
-  /* mix-blend-mode: multiply; */
 }
 
 #tweets-container {
@@ -163,6 +162,7 @@ article.tweet header {
   color: #8071f4;
   font-size: 1rem;
   padding: 1rem 1rem 1.5rem 1rem;
+  word-wrap: break-word;
 }
 
 article.tweet footer {
