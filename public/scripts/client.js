@@ -6,6 +6,39 @@
 
 $(document).ready(function() {
 
+  /* when clicking "write new tweet" operation */
+  $('.nav-action').on("click", () => {
+
+    const $tweetForm = $('.new-tweet');
+
+    // condition to prevent stacking
+    if (!$tweetForm.has('.create-tweet').length) {
+      const $createTweet = $(`
+      <div class="new-tweet-container">
+      <h2>Compose a Tweet</h2>
+      <form method="POST" action="/tweets" class="create-tweet">
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text" class="tweet-text"></textarea>
+        <div id="alert"></div>
+        <div class="new-tweet-footer">
+          <button type="submit" class="submit-button">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+      </div>`);
+
+      $tweetForm.hide().append($createTweet);
+      $tweetForm.slideDown(500, () => {
+        $tweetForm.find('.tweet-text').focus(); // set textArea to "focus"
+      });
+    }
+
+    // Scroll to the new-tweet section
+    $('html, body').animate({
+      scrollTop: $tweetForm.offset().top - 100
+    }, { duration: 500 });
+  });
+
   const loadTweets = function() {
     $.ajax({
       url: '/tweets',
@@ -20,6 +53,7 @@ $(document).ready(function() {
     });
   };
 
+  /* render tweets from database */
   const renderTweets = function(tweets) {
 
     const $tweetsContainer = $('#tweets-container');
@@ -31,6 +65,7 @@ $(document).ready(function() {
 
   };
 
+  /* creating dom-structure for tweets */
   const createTweetElement = function(element) {
     const name = element.user.name;
     const avatar = element.user.avatars;
@@ -78,7 +113,8 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  $('.create-tweet').on("submit", function(event) {
+  /* submiting new tweet */
+  $(document).on("submit", '.create-tweet', function(event) {
 
     event.preventDefault();
 
@@ -105,6 +141,7 @@ $(document).ready(function() {
       success: function(response) {
         console.log('Server Response:', response);
         window.location.reload();
+
       },
       error: function(error) {
         console.error('Error:', error);
