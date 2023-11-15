@@ -37,6 +37,7 @@ $(document).ready(function() {
     $('html, body').animate({
       scrollTop: $tweetForm.offset().top - 100
     }, { duration: 500 });
+    $tweetForm.find('.tweet-text').focus(); // set textArea to "focus"
   });
 
   const loadTweets = function() {
