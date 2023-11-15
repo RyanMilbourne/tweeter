@@ -6,42 +6,19 @@
 
 $(document).ready(function() {
 
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
+  const loadTweets = function() {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      dataType: 'json',
+      success: function(response) {
+        renderTweets(response);
       },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    },
-    {
-      "user": {
-        "name": "Ryan",
-        "avatars": "https://avatars.githubusercontent.com/u/73450753?v=4",
-        "handle": "RyanMilbourne"
-      },
-      "content": {
-        "text": "I can see the back of my head"
-      },
-      "created_at": 1461113959088
-    }
-  ]
+      error: function(error) {
+        console.error("Could not load tweets: ", error);
+      }
+    })
+  };
 
   const renderTweets = function(tweets) {
 
@@ -59,9 +36,7 @@ $(document).ready(function() {
     const avatar = element.user.avatars;
     const handle = element.user.handle;
     const message = element.content.text;
-
-    const date = new Date(element.created_at);
-    const dateStamp = date.toDateString();
+    const dateStamp = timeago.format(element.created_at);
 
     const $tweet = $(`<article class="tweet">
     <header>
@@ -97,6 +72,45 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  renderTweets(data);
+  $('.create-tweet').on("submit", function(event) {
+
+    event.preventDefault();
+
+    const $formData = $(this).serialize();
+    const message = $('#tweet-text').val();
+
+    if (message.length > 140) {
+      return alert("Too many characters!");
+    }
+
+    if (message === null || message === "") {
+      return alert("Please enter some text before submitting a tweet!");
+    }
+    /*
+    mentor version of post ajax request
+
+    $.ajax('/tweets', { method: 'POST', data: $formData })
+      .then(function(data, textStatus, jqXHR) {
+        console.log("data: ", data);
+        console.log("status: ", textStatus);
+        console.log("jqXHR", jqXHR);
+      });
+    */
+
+    $.ajax({
+      type: 'POST',
+      url: '/tweets',
+      data: $formData,
+      success: function(response) {
+        console.log('Server Response:', response);
+      },
+      error: function(error) {
+        console.error('Error:', error);
+      }
+    });
+
+  });
+
+  loadTweets()
 
 });
