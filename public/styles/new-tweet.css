@@ -30,7 +30,25 @@
 .create-tweet label {
   color: #8071f4;
   font-size: 1rem;
+}
+
+.tweet-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: .5rem;
+}
+
+.fa-solid {
+  color: #8071f4;
+}
+
+.fa-solid:hover {
+  color: rgba(128, 113, 244, .5);
+}
+
+.fa-solid:active {
+  transform: rotate(-180deg);
 }
 
 textarea {
