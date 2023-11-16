@@ -48,17 +48,17 @@ $(document).ready(function() {
   });
 
   const loadTweets = function() {
-    $.ajax({
-      url: '/tweets',
-      method: 'GET',
-      dataType: 'json',
-      success: function(response) {
-        renderTweets(response);
-      },
-      error: function(error) {
+
+    $.get('/tweets', function(response) {
+      renderTweets(response);
+    })
+      .done(function() {
+        console.log("Tweets loaded");
+      })
+      .fail(function(error) {
         console.error("Could not load tweets: ", error);
-      }
-    });
+      });
+
   };
 
   /* render tweets from database */
@@ -142,20 +142,16 @@ $(document).ready(function() {
       return $($alert).append($message);
     }
 
-    $.ajax({
-      type: 'POST',
-      url: '/tweets',
-      data: $formData,
-      success: function(response) {
+    $.post('/tweets', $formData)
+      .done(function(response) {
         console.log('Server Response:', response);
         loadTweets();
         $('#tweet-text').val("").focus(); // reset textArea
-        $('.counter').val(140)// reset the counter
-      },
-      error: function(error) {
+        $('.counter').val(140); // reset the counter
+      })
+      .fail(function(error) {
         console.error('Error:', error);
-      }
-    });
+      });
 
   });
 
