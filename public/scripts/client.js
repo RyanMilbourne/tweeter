@@ -17,7 +17,10 @@ $(document).ready(function() {
       <div class="new-tweet-container">
       <h2>Compose a Tweet</h2>
       <form method="POST" action="/tweets" class="create-tweet">
+      <div class="tweet-cta">
         <label for="tweet-text">What are you humming about?</label>
+        <i class="fa-solid fa-circle-chevron-up"></i>
+        </div>
         <textarea name="text" id="tweet-text" class="tweet-text"></textarea>
         <div id="alert"></div>
         <div class="new-tweet-footer">
@@ -31,6 +34,10 @@ $(document).ready(function() {
       $tweetForm.slideDown(500, () => {
         $tweetForm.find('.tweet-text').focus(); // set textArea to "focus"
       });
+
+      $('.fa-solid').on('click', () => {
+        $tweetForm.slideToggle(500);
+      })
     }
 
     // Scroll to the new-tweet section
