@@ -6,13 +6,11 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* padding-top: 20px; */
-  /* margin-bottom: 4rem; */
 }
 
 .new-tweet-container {
   padding-top: 20px;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .new-tweet-container h2 {
@@ -39,17 +37,20 @@
   margin-bottom: .5rem;
 }
 
-.fa-solid {
+.fa-solid.fa-circle-chevron-up {
   color: #8071f4;
 }
 
-.fa-solid:hover {
+.fa-solid.fa-circle-chevron-up:hover {
   color: rgba(128, 113, 244, .5);
 }
 
-.fa-solid:active {
+
+/* create a class called rotate */
+
+/* .fa-solid:active {
   transform: rotate(-180deg);
-}
+} */
 
 textarea {
   outline: none;
@@ -180,6 +181,7 @@ article.tweet header {
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
 }
 
 .user-tweet {
