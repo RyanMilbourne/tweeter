@@ -135,11 +135,13 @@ $(document).ready(function() {
 
     if (message.length > 140) {
       const $alertMessage = $('<p><i>*Character limit exceeded</i></p>');
+      $('.new-tweet').find('.tweet-text').focus();
       return $($alert).append($alertMessage);
     }
 
     if (message === null || message === "") {
       const $message = $('<p><i>*Please enter some text before submmitting a tweet</i></p>')
+      $('.new-tweet').find('.tweet-text').focus();
       return $($alert).append($message);
     }
 
