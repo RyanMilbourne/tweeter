@@ -35,8 +35,9 @@ $(document).ready(function() {
         $tweetForm.find('.tweet-text').focus(); // set textArea to "focus"
       });
 
-      $('.fa-solid').on('click', () => {
-        $tweetForm.slideToggle(500);
+      // collapse tweet form
+      $('.fa-solid.fa-circle-chevron-up').on('click', () => {
+        $tweetForm.slideUp(250).empty();
       })
     }
 
