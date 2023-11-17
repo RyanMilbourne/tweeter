@@ -45,13 +45,6 @@
   color: rgba(128, 113, 244, .5);
 }
 
-
-/* create a class called rotate */
-
-/* .fa-solid:active {
-  transform: rotate(-180deg);
-} */
-
 textarea {
   outline: none;
   border: 1px solid transparent;
