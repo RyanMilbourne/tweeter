@@ -2,13 +2,13 @@ header.profile-banner {
   height: 400px;
   width: 100%;
   display: flex;
-  margin-top: 100px;
-  padding-bottom: 20px;
+  /* margin-top: 100px; */
+  padding-top: 20px;
   background-color: #f5eefd;
   background-image: url("https://www.transparenttextures.com/patterns/subtle-zebra-3d.png");
   background-attachment: fixed;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 
@@ -31,4 +31,15 @@ header.profile-banner {
   font-weight: 300;
   font-size: 1rem;
   color: #8071f4;
+}
+
+@media only screen and (min-width: 1024px) {
+  header.profile-banner {
+    flex: 1;
+    max-width: 33.33%;
+    border-radius: 1rem;
+    margin-top: 0;
+    position: sticky;
+    top: 140px;
+  }
 }

@@ -17,6 +17,13 @@ html {
  * Global layout stuff
  */
 
+.main_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 body {
   color: #79746d;
   background-color: #ffffff;
@@ -65,4 +72,21 @@ h5 {
   font-weight: 300;
   margin: 5px;
   color: #8071f4;
+}
+
+@media only screen and (min-width: 1024px) {
+  .main_content {
+    flex-direction: row;
+    gap: 2rem;
+    align-items: start;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 140px;
+  }
+
+  main {
+    flex: 1.5;
+    max-width: 50%;
+    padding-top: 0px;
+  }
 }

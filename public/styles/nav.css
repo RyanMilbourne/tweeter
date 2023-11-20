@@ -2,9 +2,8 @@ nav {
   height: 100px;
   width: 100vw;
   padding: 0 2.5rem 0 2.5rem;
-  position: fixed;
+  position: absolute;
   top: 0px;
-  background-color: #8071f4;
   color: white;
   display: flex;
   flex-direction: row;
@@ -14,6 +13,7 @@ nav {
 
 .logo {
   display: flex;
+  color: #8071f4;
   font-family: 'bungee', sans-serif;
   align-content: center;
   align-items: center;
@@ -26,6 +26,7 @@ nav {
 }
 
 .nav-action {
+  color: #8071f4;
   margin: 1.5rem 0 1.5rem 0;
   display: flex;
   font-size: 1.1rem;
@@ -57,6 +58,29 @@ nav {
 
 .fa-solid.fa-solid.fa-angles-down {
   margin-top: .2rem;
-  color: white;
+  color: #8071f4;
   animation: loop 1s ease-in-out infinite;
+}
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    height: 100px;
+    width: 100vw;
+    padding: 0 2.5rem 0 2.5rem;
+    position: fixed;
+    background-color: #8071f4;
+    color: white;
+  }
+
+  .logo {
+    color: white;
+  }
+
+  .nav-action {
+    color: white;
+  }
+
+  .fa-solid.fa-solid.fa-angles-down {
+    color: white;
+  }
 }

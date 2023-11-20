@@ -6,6 +6,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding-top: 20px;
 }
 
 .new-tweet-container {
@@ -237,4 +238,10 @@ article.tweet footer {
   color: #ff1e74;
   transform-origin: left;
   animation: fade-in 0.2s ease-in-out;
+}
+
+@media only screen and (min-width: 1024px) {
+  #tweets-container {
+    margin-top: 0px;
+  }
 }
