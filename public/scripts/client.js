@@ -6,6 +6,9 @@
 
 $(document).ready(function() {
 
+  /* initial hide of tweet form */
+  $('.new-tweet').hide();
+
   /* when clicking "write new tweet" operation */
   $('.nav-action').on("click", () => {
 
@@ -31,21 +34,29 @@ $(document).ready(function() {
       </div>`);
 
       $tweetForm.hide().append($createTweet);
-      $tweetForm.slideDown(500, () => {
+      $tweetForm.slideDown(250, () => {
         $tweetForm.find('.tweet-text').focus(); // set textArea to "focus"
       });
 
       // collapse tweet form
       $('.fa-solid.fa-circle-chevron-up').on('click', () => {
-        $tweetForm.slideUp(250).empty();
+        $('html, body').animate({ scrollTop: 0 }, 250); // realign to top
+        $tweetForm.slideUp(250).empty(); // collapse tweet form
       })
     }
 
-    // Scroll to the new-tweet section
-    $('html, body').animate({
-      scrollTop: $tweetForm.offset().top - 100
-    }, { duration: 500 });
-    $tweetForm.find('.tweet-text').focus(); // set textArea to "focus"
+    if ($(window).width() >= 1024) {
+      // Scroll to the new-tweet section
+      $('html, body').animate({
+        scrollTop: $tweetForm.offset().top - 100
+      }, { duration: 250 });
+      $tweetForm.find('.tweet-text').focus(); // set textArea to "focus" 
+    } else {
+      $('html, body').animate({
+        scrollTop: $tweetForm.offset().top
+      }, { duration: 250 });
+      $tweetForm.find('.tweet-text').focus(); // set textArea to "focus" 
+    }
   });
 
   const loadTweets = function() {
