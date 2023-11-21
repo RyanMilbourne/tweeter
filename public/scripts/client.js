@@ -146,13 +146,35 @@ $(document).ready(function() {
 
     if (message.length > 140) {
       const $alertMessage = $('<p><i>*Character limit exceeded</i></p>');
-      $('.new-tweet').find('.tweet-text').focus();
+      const $textArea = $('.new-tweet').find('.tweet-text');
+
+      // focus to text area
+      $textArea.focus();
+
+      // hide message when count is < 140
+      $textArea.on('input', function() {
+        if ($textArea.val().length <= 140) {
+          $alertMessage.hide();
+        }
+      });
+
+      // print alert message
       return $($alert).append($alertMessage);
     }
 
     if (message === null || message === "") {
-      const $message = $('<p><i>*Please enter some text before submmitting a tweet</i></p>')
-      $('.new-tweet').find('.tweet-text').focus();
+      const $message = $('<p><i>*Please enter some text before submmitting a tweet</i></p>');
+      const $textArea = $('.new-tweet').find('.tweet-text');
+
+      // focus to text area
+      $textArea.focus();
+
+      // hide the message when the user starts typing
+      $textArea.on('input', function() {
+        $message.hide();
+      });
+
+      // print alert message
       return $($alert).append($message);
     }
 
