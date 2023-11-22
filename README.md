@@ -23,7 +23,9 @@ Tweeter, a straightforward single-page Twitter replica, allows you to enrich you
   - Must be between 1 - 140 characters.
   ![Too many characters](./public/images/Tweeter-Error2.gif)
 - Collapse your *new tweet form* by pressing the up-arrow button.
+  - ![Collapse Tweet-form](./public/images/Tweeter-Collapse.gif)
 - When scrolling, a *back-to-top* button will appear on the bottom right of the page.
+  - ![Scroll-to-top](./public/images/Tweeter-Scroll-to-top.gif)
 - Playful pseudo elements tastefully incorporated around the page!
 
 ## Dependencies
