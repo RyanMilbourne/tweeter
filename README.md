@@ -17,11 +17,14 @@ Tweeter, a straightforward single-page Twitter replica, allows you to enrich you
 
 ## Features
 - Responsive Design. Carefully crafted to fit your screen!
-- Character counter for you tweet form. 
-  - Must be between 1 - 140 characters, otherwise a corresponding error will be printed.
+- Dynamic ***alerts*** in the new tweet form. 
+  - Must contain at least 1 character.
+  ![No characters](./public/images/Tweeter-Error1.gif)
+  - Must be between 1 - 140 characters.
+  ![Too many characters](./public/images/Tweeter-Error2.gif)
 - Collapse your *new tweet form* by pressing the up-arrow button.
 - When scrolling, a *back-to-top* button will appear on the bottom right of the page.
-- Playful pseudo elements hidden around the page!
+- Playful pseudo elements tastefully incorporated around the page!
 
 ## Dependencies
 
