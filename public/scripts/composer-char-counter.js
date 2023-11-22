@@ -19,4 +19,25 @@ $(document).ready(function() {
     }
   });
 
+  // add scroll-to-top button on scroll
+  $(window).scroll(function() {
+    // check if user is at top of page
+    if ($(this).scrollTop() > 100) {
+      const $scrollButton = $(`<div class="scroll-to-top">
+        <i class="fa-solid fa-caret-up"></i>
+      </div>`);
+
+      $('.bottom-nav').append($scrollButton);
+
+      $scrollButton.show();
+    } else {
+      $('.scroll-to-top').remove(); // hide button if at top of page
+    }
+  });
+
+  // make scroll-to-top button functional
+  $('.bottom-nav').on('click', function() {
+    $('html, body').animate({ scrollTop: 0 }, 150);
+  });
+
 });

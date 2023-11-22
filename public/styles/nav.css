@@ -8,20 +8,17 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  z-index: 100;
+  z-index: 10001;
 }
 
 .logo {
   display: flex;
   font-family: 'bungee', sans-serif;
+  font-size: 1.5rem;
+  gap: 5px;
   align-content: center;
   align-items: center;
   margin: 1.5rem 0 1.5rem 0;
-}
-
-.logo:hover {
-  cursor: pointer;
-  transform: scale(1.05);
 }
 
 .nav-action {
@@ -54,14 +51,15 @@ nav {
   }
 }
 
-.fa-solid.fa-solid.fa-angles-down {
+.fa-solid.fa-solid.fa-pen-clip {
   margin-top: .2rem;
-  /* color: #8071f4; */
   animation: loop 1s ease-in-out infinite;
 }
 
 @media only screen and (min-width: 1024px) {
   nav {
+    background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+    background-size: 10%;
     position: fixed;
     background-color: #8071f4;
   }

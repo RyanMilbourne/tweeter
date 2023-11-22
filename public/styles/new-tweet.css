@@ -158,6 +158,7 @@ article.tweet header {
   align-items: center;
   color: rgba(128, 113, 244, .5);
   padding-right: 1rem;
+  cursor: pointer;
 }
 
 .handle:hover {
@@ -169,6 +170,7 @@ article.tweet header {
   height: 50px;
   margin-right: .1rem;
   border-radius: 25%;
+  cursor: pointer;
 }
 
 #tweets-container {
@@ -215,6 +217,10 @@ article.tweet footer {
   transition: ease-out;
 }
 
+.tweet-toggle-clicked {
+  color: #fc4c9e;
+}
+
 #alert {
   display: flex;
   width: 100%;
@@ -243,5 +249,13 @@ article.tweet footer {
 @media only screen and (min-width: 1024px) {
   #tweets-container {
     margin-top: 0px;
+  }
+
+  .new-tweet {
+    padding-top: 0px;
+  }
+
+  .new-tweet-container {
+    padding-top: 0px;
   }
 }

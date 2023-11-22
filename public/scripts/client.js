@@ -21,7 +21,7 @@ $(document).ready(function() {
       <h2>Compose a Tweet</h2>
       <form method="POST" action="/tweets" class="create-tweet">
       <div class="tweet-cta">
-        <label for="tweet-text">What are you humming about?</label>
+        <label for="tweet-text">Go on, tell the world!</label>
         <i class="fa-solid fa-circle-chevron-up"></i>
         </div>
         <textarea name="text" id="tweet-text" class="tweet-text"></textarea>
@@ -48,7 +48,7 @@ $(document).ready(function() {
     if ($(window).width() >= 1024) {
       // Scroll to the new-tweet section
       $('html, body').animate({
-        scrollTop: $tweetForm.offset().top - 100
+        scrollTop: $tweetForm.offset().top - 140
       }, { duration: 250 });
       $tweetForm.find('.tweet-text').focus(); // set textArea to "focus" 
     } else {
@@ -151,10 +151,12 @@ $(document).ready(function() {
       // focus to text area
       $textArea.focus();
 
-      // hide message when count is < 140
+      // hide message when count is < 140 or show message when count is > 140
       $textArea.on('input', function() {
         if ($textArea.val().length <= 140) {
           $alertMessage.hide();
+        } else if ($textArea.val().length > 140) {
+          $alertMessage.show();
         }
       });
 
