@@ -27,7 +27,7 @@ html {
 body {
   color: #79746d;
   background-color: #ffffff;
-  font-size: 24px;
+  font-size: 1rem;
   font-family: 'source-sans-3', sans-serif;
   font-weight: 300;
   width: 100%;
@@ -74,19 +74,68 @@ h5 {
   color: #8071f4;
 }
 
+.scroll-to-top {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  margin-right: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #8071f4;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid #8071f4;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.075, 0.82, 0.165, 1)
+}
+
+.scroll-to-top:hover {
+  box-shadow: 5px 5px 0 0 #8071f4;
+  transition: cubic-bezier(0, 0, 0, 1.02);
+  transition-duration: 100ms;
+  transform: translate(-5px, -5px);
+}
+
+.scroll-to-top:active {
+  color: white;
+  background-color: #8071f4;
+}
+
+footer.page-end {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  margin-top: 2rem;
+  color: rgba(128, 113, 244, .5);
+}
+
 @media only screen and (min-width: 1024px) {
   .main_content {
     flex-direction: row;
     gap: 2rem;
     align-items: start;
-    width: 100%;
+    width: 66.66%;
     justify-content: space-around;
-    margin-top: 140px;
+    padding-top: 140px;
+    min-height: 100svh;
   }
 
   main {
     flex: 1.5;
-    max-width: 50%;
+    max-width: 60%;
     padding-top: 0px;
+    align-items: flex-start;
+  }
+
+  .scroll-to-top {
+    margin-right: 2.5rem;
+    margin-bottom: 2rem;
   }
 }
